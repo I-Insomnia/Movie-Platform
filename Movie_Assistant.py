@@ -32,5 +32,8 @@ if st.button('Submit'):
 
 
     sd = json.loads(suggestion_dictionary)
-
+    
+    suggestion_df = pd.DataFrame.from_dict(sd)
+    print(suggestion_df)
     print (sd)
+    st.table(suggestion_df)
