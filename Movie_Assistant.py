@@ -13,7 +13,7 @@ Also suggest three other movies made by the same filmmaker below with short desc
 """
 
 st.title("Movie Platform")
-st.subheader("Let's watch a movie while also support the makers!!")
+st.subheader("Let's watch a movie while also supporting the makers!!")
 
 user_input = st.text_area("Enter movie name:", "Your input here")
 
