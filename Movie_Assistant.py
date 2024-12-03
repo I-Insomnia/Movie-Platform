@@ -14,6 +14,7 @@ Also suggest three other movies made by the same filmmaker below with short desc
 
 st.title("Movie Platform :clapper:")
 st.subheader("Let's watch a movie while also supporting the makers!!")
+st.markdown("Find your favorite movie online platform!")
 
 user_input = st.text_area("Enter movie name:", "Your input here")
 
