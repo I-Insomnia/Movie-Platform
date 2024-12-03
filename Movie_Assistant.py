@@ -17,23 +17,23 @@ st.subheader("Let's watch a movie while also supporting the makers!!")
 
 user_input = st.text_area("Enter movie name:", "Your input here")
 
-#if st.button('Submit'):
- #   messages_so_far = [
-  #      {"role": "system", "content": prompt},
-   #     {'role': 'user', 'content': user_input},
-    #]
-    #response = client.chat.completions.create(
-     #   model="GPT-4o-2024-08-06",
-      #  messages=messages_so_far
-    #)
+if st.button('Submit'):
+    messages_so_far = [
+        {"role": "system", "content": prompt},
+        {'role': 'user', 'content': user_input},
+    ]
+    response = client.chat.completions.create(
+        model="GPT-4o-2024-08-06",
+        messages=messages_so_far
+    )
     # Show the response from the AI in a box
-    #st.markdown('**AI response:**')
-    #suggestion_dictionary = response.choices[0].message.content
+    st.markdown('**AI response:**')
+    suggestion_dictionary = response.choices[0].message.content
 
 
-    #sd = json.loads(suggestion_dictionary)
+    sd = json.loads(suggestion_dictionary)
     
-    #suggestion_df = pd.DataFrame.from_dict(sd)
-    #print(suggestion_df)
-    #print (sd)
-    #st.table(suggestion_df)
+    suggestion_df = pd.DataFrame.from_dict(sd)
+    print(suggestion_df)
+    print (sd)
+    st.table(suggestion_df)
