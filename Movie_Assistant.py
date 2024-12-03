@@ -23,7 +23,7 @@ if st.button('Submit'):
         {'role': 'user', 'content': user_input},
     ]
     response = client.chat.completions.create(
-        model="gpt-4o",
+        model="GPT-4o-2024-08-06",
         messages=messages_so_far
     )
     # Show the response from the AI in a box
