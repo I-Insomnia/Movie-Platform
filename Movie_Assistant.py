@@ -10,6 +10,7 @@ prompt = """ Act as an AI assistant in finding information about movies in Engli
 You will receive a name of a movie and you should provide information about the legal streaming platform
 containing said movie available in Thailand region. 
 Also suggest three other movies made by the same filmmaker below with short description about the movies.
+Please respond with a JSON object containing the following fields: "movie_title", "streaming_platform", "director", "other_movie".
 """
 
 st.title("Movie Platform :clapper:")
@@ -27,11 +28,15 @@ if st.button('Submit'):
         model="gpt-4",
         messages=messages_so_far
     )
-    # Show the response from the AI in a box
+    
     st.markdown('**AI response:**')
     generated_text = response.choices[0].message.content
-
-    data = json.loads(generated_text)
-    movie_title = data.get("movie_title")
-    print(data)
-    print(movie_title)
+    try:
+        data = json.loads(generated_text)
+        # ... access data elements ...
+    except json.JSONDecodeError:
+        st.error("Error: The AI response was not valid JSON. Please try again.")
+    #data = json.loads(generated_text)
+    #movie_title = data.get("movie_title")
+    #print(data)
+    #print(movie_title)
