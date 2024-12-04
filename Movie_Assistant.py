@@ -29,6 +29,9 @@ if st.button('Submit'):
     )
     # Show the response from the AI in a box
     st.markdown('**AI response:**')
-    suggestion_dictionary = response.choices[0].message.content
-    
-    print(suggestion_dictionary)
+    generated_text = response.choices[0].message.content
+
+    data = json.loads(generated_text)
+    movie_title = data.get("movie_title")
+    print(data)
+    print(movie_title)
