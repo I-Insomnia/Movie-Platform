@@ -3,12 +3,10 @@ import openai
 import json
 import pandas as pd
 
-# Get the API key from the sidebar called OpenAI API key
 user_api_key = st.sidebar.text_input("OpenAI API key", type="password")
 
 openai.api_key = user_api_key
 
-#client = openai.OpenAI(api_key=user_api_key)
 prompt = """ Act as an AI assistant in finding information about movies in English and Thai.
 You will receive a name of a movie and you should provide information about the legal streaming platform
 containing said movie available in Thailand region. 
@@ -22,7 +20,6 @@ st.markdown("The AI can assist you in finding your favorite movie on online plat
 
 user_input = st.text_area("Enter movie name:", "Your input here")
 
-# Submit button after text input
 if st.button('Submit'):
     if not user_api_key:
         st.error("Please enter your OpenAI API key in the sidebar.")
@@ -47,12 +44,10 @@ if st.button('Submit'):
                 st.write(f"**Movie Title:** {sd['movie_title']}")
                 st.write(f"**Streaming Platform:** {sd['streaming_platform']}")
                 st.write(f"**Director:** {sd['director']}")
-                st.write(f"**Suggestions Movie:**")
+                st.write(f"**Suggestions movie from the same director:**")
                 st.table(sd['other_movie'])
-                st.table(suggestion_df)
             except json.JSONDecodeError:
                 st.error("The response is not in valid JSON format. Please try again.")
 
         except Exception as e:
             st.error(f"An error occurred: {e}")
-
