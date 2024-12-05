@@ -44,6 +44,9 @@ if st.button('Submit'):
                 sd = json.loads(suggestion_dictionary)
                 suggestion_df = pd.DataFrame.from_dict(sd)
                 st.markdown('**AI response:**')
+                st.write(f"**Movie Title:** {sd['movie_title']}")
+                st.write(f"**Streaming Platform:** {sd['streaming_platform']}")
+                st.write(f"**Director:** {sd['director']}")
                 st.table(suggestion_df)
             except json.JSONDecodeError:
                 st.error("The response is not in valid JSON format. Please try again.")
