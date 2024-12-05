@@ -35,13 +35,12 @@ if st.button('Submit'):
             {'role': 'user', 'content': user_input},
         ]
         try:
-            # Call the OpenAI API with the new method
             response = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo",
                 messages=messages_so_far
             )
             # Extract the AI's response
-            suggestion_dictionary = response['choices'][0]['message']['content']
+            suggestion_dictionary = response.choices[0].message.content
 
             # Parse JSON and convert to DataFrame
             try:
