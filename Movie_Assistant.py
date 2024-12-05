@@ -21,43 +21,16 @@ st.markdown("The AI can assist you in finding your favorite movie on online plat
 
 user_input = st.text_area("Enter movie name:", "Your input here")
 
-#if st.button('Submit'):
- #   messages_so_far = [
-  #      {"role": "system", "content": prompt},
-   #     {'role': 'user', 'content': user_input},
-    #]
-    #response = client.chat.completions.create(
-     #   model="gpt-4o-2024-05-13",
-      #  messages=messages_so_far
-    #)
+if st.button('Submit'):
+    messages_so_far = [
+        {"role": "system", "content": prompt},
+        {'role': 'user', 'content': user_input},
+    ]
+    response = client.chat.completions.create(
+        model="gpt-4o-2024-05-13",
+        messages=messages_so_far
+    )
     
-    #st.markdown('**AI response:**')
-    #generated_text = response.choices[0].message.content
-    #print(generated_text)
-
-if not user_api_key:
-        st.error("Please enter your OpenAI API key in the sidebar.")
-    else:
-        messages_so_far = [
-            {"role": "system", "content": prompt},
-            {'role': 'user', 'content': user_input},
-        ]
-        try:
-            response = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
-                messages=messages_so_far
-            )
-            # Extract the AI's response
-            suggestion_dictionary = response.choices[0].message.content
-
-            # Parse JSON and convert to DataFrame
-            try:
-                sd = json.loads(suggestion_dictionary)
-                suggestion_df = pd.DataFrame.from_dict(sd)
-                st.markdown('**AI response:**')
-                st.table(suggestion_df)
-            except json.JSONDecodeError:
-                st.error("The response is not in valid JSON format. Please try again.")
-
-        except Exception as e:
-            st.error(f"An error occurred: {e}")
+    st.markdown('**AI response:**')
+    generated_text = response.choices[0].message.content
+    print(generated_text)
