@@ -49,7 +49,7 @@ if st.button('Submit'):
                 st.write(f"**Director:** {sd['director']}")
                 st.write(f"**Suggestions Movie:**")
                 st.table(sd['other_movie'])
-                #st.table(suggestion_df)
+                st.table(suggestion_df)
             except json.JSONDecodeError:
                 st.error("The response is not in valid JSON format. Please try again.")
 
