@@ -25,7 +25,7 @@ if st.button('Submit'):
         {'role': 'user', 'content': user_input},
     ]
     response = client.chat.completions.create(
-        model="gpt-4",
+        model="gpt-4o-2024-05-13",
         messages=messages_so_far
     )
     
