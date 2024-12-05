@@ -31,11 +31,4 @@ if st.button('Submit'):
     
     st.markdown('**AI response:**')
     generated_text = response.choices[0].message.content
-    try:
-        data = json.loads(generated_text)
-    except json.JSONDecodeError:
-        st.error("Error: The AI response was not valid JSON. Please try again.")
-    data = json.loads(generated_text)
-    movie_title = data.get("movie_title")
-    print(data)
-    print(movie_title)
+    print(generated_text)
