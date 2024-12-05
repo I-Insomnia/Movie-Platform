@@ -30,7 +30,7 @@ if st.button('Submit'):
         ]
         try:
             response = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
+                model="gpt-4o",
                 messages=messages_so_far
             )
             # Extract the AI's response
@@ -46,6 +46,7 @@ if st.button('Submit'):
                 st.write(f"**Director:** {sd['director']}")
                 st.write(f"**Suggestions movie from the same director:**")
                 st.table(sd['other_movie'])
+                st.table(suggestion_df)
             except json.JSONDecodeError:
                 st.error("The response is not in valid JSON format. Please try again.")
 
