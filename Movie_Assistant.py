@@ -9,11 +9,11 @@ openai.api_key = user_api_key
 
 prompt = """ Act as an movie master assistant in finding information about movies in English and Thai.
 You will receive a name of a movie and you should provide information about all legal streaming platform available in Thailand region 
-with format that concat with ",". If it's not available in legal thai streaming return "-". And tell the director of the movie.
+with format that concat with ",". If it's not available in legal thai streaming return "-".
 Also suggest three other movies made by the same director below with short description about the movies. 
 Answer in the same language as user input.
 Please respond with a JSON object containing the following fields: "movie_title", "streaming_platform", "director", "other_movie".
-Please suggests information with clearlify references and have provable references.
+Please suggests information with clearlify references and have provable references. For example from wikipedia.
 """
 
 st.title("Movie Platform :clapper:")
