@@ -47,7 +47,7 @@ if st.button('Submit'):
                 st.write(f"**Suggestions movie from the same director:**")
                 st.table(sd['other_movie'], index=[1,2,3])
                 
-             except json.JSONDecodeError:
+            except json.JSONDecodeError:
                 st.error("The response is not in valid JSON format. Please try again.")
 
         except Exception as e:
