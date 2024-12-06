@@ -21,7 +21,7 @@ st.title("Movie Platform :clapper:")
 st.subheader("Let's watch a movie while also supporting the makers!!")
 st.markdown("The Movie Platform AI will help you in finding your favorite movie on legal online platforms!")
 
-user_input = st.text_area("Enter movie name:", "Your input here")
+user_input = st.text_area("Enter movie name in English or Thai:", "Your input here")
 
 if st.button('Submit'):
     if not user_api_key:
