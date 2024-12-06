@@ -7,7 +7,7 @@ user_api_key = st.sidebar.text_input("OpenAI API key", type="password")
 
 openai.api_key = user_api_key
 
-prompt = """ Act as an movie master AI assistant in finding information about movies in English and Thai.
+prompt = """ Act as an movie master assistant in finding information about movies in English and Thai.
 You will receive a name of a movie and you should provide information about all legal streaming platform available in Thailand region 
 with format that concat with ",". If it's not available in legal thai streaming return "-".
 Also suggest three other movies made by the same filmmaker below with short description about the movies. If you don't have an information about the filmaker, 
