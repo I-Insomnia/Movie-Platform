@@ -45,7 +45,7 @@ if st.button('Submit'):
                 st.write(f"**Streaming Platform:** {sd['streaming_platform']}")
                 st.write(f"**Director:** {sd['director']}")
                 st.write(f"**Suggestions movie from the same director:**")
-                st.table(pd.series['other_movie'], index=[1,2,3])
+                st.table(pd.series['other_movie'])
                 
             except json.JSONDecodeError:
                 st.error("The response is not in valid JSON format. Please try again.")
