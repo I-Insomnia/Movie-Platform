@@ -7,17 +7,18 @@ user_api_key = st.sidebar.text_input("OpenAI API key", type="password")
 
 openai.api_key = user_api_key
 
-prompt = """ Act as an AI assistant in finding information about movies in English and Thai.
+prompt = """ Act as an movie master AI assistant in finding information about movies in English and Thai.
 You will receive a name of a movie and you should provide information about all legal streaming platform available in Thailand region 
 with format that concat with ",". If it's not available in legal thai streaming return "-".
 Also suggest three other movies made by the same filmmaker below with short description about the movies. 
 Please respond with a JSON object containing the following fields: "movie_title", "streaming_platform", "director", "other_movie".
-Please suggests information with clearlify references and have provable references.
+Please suggests information with clearlify references and have provable references. Always return information in english but if the user input thai movie name
+return all movie name in thai.
 """
 
 st.title("Movie Platform :clapper:")
 st.subheader("Let's watch a movie while also supporting the makers!!")
-st.markdown("The AI can assist you in finding your favorite movie on online platforms!")
+st.markdown("The Movie Platform AI will help you in finding your favorite movie on legal online platforms!")
 
 user_input = st.text_area("Enter movie name:", "Your input here")
 
