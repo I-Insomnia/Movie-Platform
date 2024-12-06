@@ -14,7 +14,7 @@ Also suggest three other movies made by the same filmmaker below with short desc
 don't suggest any movie.
 Answer in the same language as user input.
 Please respond with a JSON object containing the following fields: "movie_title", "streaming_platform", "director", "other_movie".
-Please suggests information with clearlify references and have provable references. Also respond movie full name although user input a short version of it.
+Please suggests information with clearlify references and have provable references.
 """
 
 st.title("Movie Platform :clapper:")
