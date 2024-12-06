@@ -7,10 +7,9 @@ user_api_key = st.sidebar.text_input("OpenAI API key", type="password")
 
 openai.api_key = user_api_key
 
-prompt = """ Act as an movie master in finding information about movies in English and Thai.
+prompt = """ Act as an movie and media master in finding information about movies in English and Thai.
 You will receive a name of a movie and you should provide information about all legal streaming platform available in Thailand region 
-with format that concat with ",".
-And also the main director of the movie.
+with format that concat with ",". And also the main director of the movie.
 Also suggest three other movies made by the same director below with short description about the movies. 
 Answer in the same language as user input.
 Please respond with a JSON object containing the following fields: "movie_title", "streaming_platform", "director", "other_movie".
