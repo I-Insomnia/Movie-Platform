@@ -33,7 +33,7 @@ if st.button('Submit'):
         ]
         try:
             response = openai.ChatCompletion.create(
-                model="gpt-4o",
+                model="gpt-3.5-turbo",
                 messages=messages_so_far
             )
             
