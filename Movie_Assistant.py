@@ -20,7 +20,7 @@ st.title("Movie Platform :clapper:")
 st.subheader("Let's watch a movie while also supporting the makers!!")
 st.markdown("The Movie Platform AI will help you in finding your favorite movie on legal online platforms!")
 
-user_input = st.text_area("Enter movie name in English or Thai:", "Your input here")
+user_input = st.text_area("Enter movie name in English:", "Your input here")
 
 if st.button('Submit'):
     if not user_api_key:
@@ -45,7 +45,7 @@ if st.button('Submit'):
                 st.write(f"**Streaming Platform:** {sd['streaming_platform']}")
                 st.write(f"**Director:** {sd['director']}")
                 st.write(f"**Suggestions movie from the same director:**")
-                st.table(sd['other_movie'])
+                st.write(sd['other_movie'])
                 
             except json.JSONDecodeError:
                 st.error("The response is not in valid JSON format. Please try again.")
